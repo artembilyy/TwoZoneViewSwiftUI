@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Combine
 
 struct CustomConfigureView: View {
     
@@ -56,14 +55,17 @@ struct CustomConfigureView: View {
     
     
     private func makeTextField(title: String, text observer: Binding<String>, value: String) -> some View {
-        TextField(title, text: observer, onCommit: {
+        TextField(title, text: observer, onEditingChanged: { _ in
+            /// on editing
             if let number = Int(observer.wrappedValue),
-                number < 0 ||
+               number < 0 ||
                 number > Int(value) ?? 0 {
                 showAlert = true
                 print("\(number) number")
                 print("\(numberValue) value")
             }
+        }, onCommit: {
+            
         })
         .textFieldStyle(.roundedBorder)
         .keyboardType(.numberPad)

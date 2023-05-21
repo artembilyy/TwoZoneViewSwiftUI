@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED4A997D2A1ACACE001B6D8D /* TouchableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A997C2A1ACACE001B6D8D /* TouchableView.swift */; };
 		ED4AB19D2A179D83006EB32E /* Extension + View.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AB19C2A179D82006EB32E /* Extension + View.swift */; };
 		ED4AB19F2A17FAEA006EB32E /* CustomConfigureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AB19E2A17FAEA006EB32E /* CustomConfigureView.swift */; };
 		EDD4A8872A16C8C20052C2AD /* TwoZoneViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4A8862A16C8C20052C2AD /* TwoZoneViewApp.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED4A997C2A1ACACE001B6D8D /* TouchableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableView.swift; sourceTree = "<group>"; };
 		ED4AB19C2A179D82006EB32E /* Extension + View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + View.swift"; sourceTree = "<group>"; };
 		ED4AB19E2A17FAEA006EB32E /* CustomConfigureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomConfigureView.swift; sourceTree = "<group>"; };
 		EDD4A8832A16C8C20052C2AD /* TwoZoneView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwoZoneView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +66,7 @@
 				EDD4A8862A16C8C20052C2AD /* TwoZoneViewApp.swift */,
 				EDD4A88C2A16C8C40052C2AD /* Preview Content */,
 				EDD4A88A2A16C8C40052C2AD /* Assets.xcassets */,
+				ED4A997C2A1ACACE001B6D8D /* TouchableView.swift */,
 			);
 			path = TwoZoneView;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED4A997D2A1ACACE001B6D8D /* TouchableView.swift in Sources */,
 				ED4AB19D2A179D83006EB32E /* Extension + View.swift in Sources */,
 				EDD4A8892A16C8C20052C2AD /* TwoZoneView.swift in Sources */,
 				EDD4A8952A16F5590052C2AD /* TwoZoneViewModel.swift in Sources */,

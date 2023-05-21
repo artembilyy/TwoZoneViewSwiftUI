@@ -15,6 +15,12 @@ struct TwoZoneView: View {
     // show // hide Blue bottom view
     @State private var isBlueViewHidden = false
     @State private var configureView: Bool = false
+    @State var reload: Bool = false
+    
+    @GestureState var isGestureActive = false
+    @State var touchDown = false
+    @GestureState private var isTapped = false
+    
     
     var body: some View {
         NavigationView {
@@ -48,10 +54,10 @@ struct TwoZoneView: View {
                 VStack {
                     HStack {
                         Button {
-                            configureView = !configureView
+                            viewModel.makeSize()
                             nameIsFocused = false
                         } label: {
-                            Text("Configure View: \(String(configureView))")
+                            Text("Configure View")
                                 .foregroundColor(.white)
                                 .padding()
                                 .background(.black)
@@ -72,16 +78,14 @@ struct TwoZoneView: View {
                     .padding()
                     GeometryReader { geometry in
                         VStack(spacing: 0) {
-                            if configureView {
-                                makeMainView(
-                                    x: CGFloat(Double(viewModel.xPosition) ?? 0),
-                                    y: CGFloat(Double(viewModel.yPosition) ?? 0),
-                                    width: CGFloat(Double(viewModel.widthValue) ?? 0),
-                                    height: CGFloat(Double(viewModel.heightValue) ?? 0),
-                                    geometry: geometry
-                                )
-                            }
+                            makeMainView(
+                                x: CGFloat(Double(viewModel.newPositionX)),
+                                y: CGFloat(Double(viewModel.newPositionY)),
+                                width: CGFloat(viewModel.newWidth),
+                                height: CGFloat((viewModel.newHeight))
+                            )
                         }
+                        //                        }
                         .onAppear {
                             viewModel.height = String(Int(geometry.size.height))
                             viewModel.widht = String(Int(geometry.size.width))
@@ -98,17 +102,29 @@ struct TwoZoneView: View {
 
 private extension TwoZoneView {
     
-    func makeMainView(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, geometry: GeometryProxy) -> some View {
+    func makeMainView(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) -> some View {
         ZStack {
             VStack(spacing: 0) {
-                Rectangle()
-                    .foregroundColor(.yellow)
+                UIKitYellowView()
                     .frame(height: isBlueViewHidden ? height : height * 0.7)
+                
                 if !isBlueViewHidden {
                     Rectangle()
                         .foregroundColor(.blue)
                         .transition(.opacity)
                         .frame(height: height * 0.3)
+                        .gesture(DragGesture(minimumDistance: 0.0, coordinateSpace: .global)
+                            .onChanged { _ in
+                                if !touchDown {
+                                    viewModel.onBlueZoneEvent(isPressed: true)
+                                    touchDown = true
+                                }
+                            }
+                            .onEnded { _ in
+                                viewModel.onBlueZoneEvent(isPressed: false)
+                                touchDown = false
+                            }
+                        )
                 }
             }
         }
