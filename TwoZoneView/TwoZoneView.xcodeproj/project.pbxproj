@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		ED4A997D2A1ACACE001B6D8D /* TouchableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A997C2A1ACACE001B6D8D /* TouchableView.swift */; };
+		ED4A99802A1C0E8D001B6D8D /* CustomConfigureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A997F2A1C0E8D001B6D8D /* CustomConfigureViewModel.swift */; };
+		ED4A99832A1C0F84001B6D8D /* SizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A99822A1C0F84001B6D8D /* SizeCalculator.swift */; };
 		ED4AB19D2A179D83006EB32E /* Extension + View.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AB19C2A179D82006EB32E /* Extension + View.swift */; };
 		ED4AB19F2A17FAEA006EB32E /* CustomConfigureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AB19E2A17FAEA006EB32E /* CustomConfigureView.swift */; };
 		EDD4A8872A16C8C20052C2AD /* TwoZoneViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4A8862A16C8C20052C2AD /* TwoZoneViewApp.swift */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		ED4A997C2A1ACACE001B6D8D /* TouchableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableView.swift; sourceTree = "<group>"; };
+		ED4A997F2A1C0E8D001B6D8D /* CustomConfigureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomConfigureViewModel.swift; sourceTree = "<group>"; };
+		ED4A99822A1C0F84001B6D8D /* SizeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeCalculator.swift; sourceTree = "<group>"; };
 		ED4AB19C2A179D82006EB32E /* Extension + View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + View.swift"; sourceTree = "<group>"; };
 		ED4AB19E2A17FAEA006EB32E /* CustomConfigureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomConfigureView.swift; sourceTree = "<group>"; };
 		EDD4A8832A16C8C20052C2AD /* TwoZoneView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwoZoneView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +44,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED4A997E2A1C0E58001B6D8D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EDD4A8942A16F5590052C2AD /* TwoZoneViewModel.swift */,
+				ED4A997F2A1C0E8D001B6D8D /* CustomConfigureViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		ED4A99812A1C0F0B001B6D8D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDD4A8882A16C8C20052C2AD /* TwoZoneView.swift */,
+				ED4AB19E2A17FAEA006EB32E /* CustomConfigureView.swift */,
+				ED4A997C2A1ACACE001B6D8D /* TouchableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED4A99842A1C0FB7001B6D8D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				EDD4A8862A16C8C20052C2AD /* TwoZoneViewApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		ED4A99852A1C0FE0001B6D8D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ED4AB19C2A179D82006EB32E /* Extension + View.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		ED4A99862A1C0FE8001B6D8D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				ED4A99822A1C0F84001B6D8D /* SizeCalculator.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		EDD4A87A2A16C8C20052C2AD = {
 			isa = PBXGroup;
 			children = (
@@ -59,14 +106,13 @@
 		EDD4A8852A16C8C20052C2AD /* TwoZoneView */ = {
 			isa = PBXGroup;
 			children = (
-				EDD4A8942A16F5590052C2AD /* TwoZoneViewModel.swift */,
-				EDD4A8882A16C8C20052C2AD /* TwoZoneView.swift */,
-				ED4AB19C2A179D82006EB32E /* Extension + View.swift */,
-				ED4AB19E2A17FAEA006EB32E /* CustomConfigureView.swift */,
-				EDD4A8862A16C8C20052C2AD /* TwoZoneViewApp.swift */,
+				ED4A99812A1C0F0B001B6D8D /* View */,
+				ED4A997E2A1C0E58001B6D8D /* ViewModels */,
+				ED4A99862A1C0FE8001B6D8D /* Helpers */,
+				ED4A99852A1C0FE0001B6D8D /* Extension */,
+				ED4A99842A1C0FB7001B6D8D /* Application */,
 				EDD4A88C2A16C8C40052C2AD /* Preview Content */,
 				EDD4A88A2A16C8C40052C2AD /* Assets.xcassets */,
-				ED4A997C2A1ACACE001B6D8D /* TouchableView.swift */,
 			);
 			path = TwoZoneView;
 			sourceTree = "<group>";
@@ -153,7 +199,9 @@
 				ED4AB19D2A179D83006EB32E /* Extension + View.swift in Sources */,
 				EDD4A8892A16C8C20052C2AD /* TwoZoneView.swift in Sources */,
 				EDD4A8952A16F5590052C2AD /* TwoZoneViewModel.swift in Sources */,
+				ED4A99832A1C0F84001B6D8D /* SizeCalculator.swift in Sources */,
 				EDD4A8872A16C8C20052C2AD /* TwoZoneViewApp.swift in Sources */,
+				ED4A99802A1C0E8D001B6D8D /* CustomConfigureViewModel.swift in Sources */,
 				ED4AB19F2A17FAEA006EB32E /* CustomConfigureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
