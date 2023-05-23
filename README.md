@@ -1,3 +1,5 @@
+## Two Zone View - SwiftUI
+
 This is a test project for implementing a custom SwiftUI view with two zones: the yellow zone and the blue zone. The yellow zone supports multitouch with multiple fingers, while the blue zone only handles single-finger touch events. The blue zone can also be hidden, in which case the yellow zone occupies the entire view. The view is capable of resizing and repositioning itself, and its four corners are always rounded.
 
 <img width="280" alt="Screenshot 2023-05-23 at 15 28 44" src="https://github.com/artembilyy/TwoZoneViewSwiftUI/assets/110157916/b92192a2-3515-4602-ba5c-d70e16dd474a">
@@ -44,4 +46,4 @@ Please note:
 - Choose the corner radius, initial position, and size of the view according to your preference.
 - Decide how to display or communicate validation errors for dimensions and position (e.g., text, alert, etc.).
 
-# This project is intended as a test task to assess your SwiftUI skills and understanding of touch event handling.
+*This project is intended as a test task to assess your SwiftUI skills and understanding of touch event handling.
