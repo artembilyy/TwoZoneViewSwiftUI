@@ -66,20 +66,20 @@ final class TwoZoneViewModel: ObservableObject {
         }
 
         if widthViewModel.currentValue > minimumSizeValue
-            && widthViewModel.currentValue <= Int(maxSize.width) {
+            && widthViewModel.currentValue <= Int(maxSize.width) - self.xPositionViewModel.currentValue {
             self.yellowShapeWidth = CGFloat(widthViewModel.currentValue)
         } else {
             self.widthViewModel.currentValue = self.minimumSizeValue + 1
-            self.latestAlertTitle = "width should be in range between 1 and \(Int(maxSize.width))"
+            self.latestAlertTitle = "width should be in range between 1 and \(Int(maxSize.width) - self.xPositionViewModel.currentValue)"
             showingAlert = true
         }
 
         if heightViewModel.currentValue > minimumSizeValue
-            && heightViewModel.currentValue <= Int(maxSize.height) {
+            && heightViewModel.currentValue <= Int(maxSize.height) - self.yPositionViewModel.currentValue {
             self.yellowShapeHeight = CGFloat(heightViewModel.currentValue)
         } else {
             self.heightViewModel.currentValue = minimumSizeValue + 1
-            self.latestAlertTitle = "height should be in range between 1 and \(Int(maxSize.height))"
+            self.latestAlertTitle = "height should be in range between 1 and \(Int(maxSize.height) - self.yPositionViewModel.currentValue)"
             showingAlert = true
         }
         isYellowViewHidden = false

@@ -50,10 +50,18 @@ final class TouchableView: UIView {
 
         }
     }
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        activeTouchesQueue.sync(flags: .barrier) {
+            activeTouches.removeAll { activeTouch in
+                touches.contains(activeTouch.touch)
+            }
+            print(activeTouches.map { $0.index })
+        }
+    }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-
         activeTouchesQueue.sync(flags: .barrier) {
             activeTouches.removeAll { activeTouch in
                 touches.contains(activeTouch.touch)
