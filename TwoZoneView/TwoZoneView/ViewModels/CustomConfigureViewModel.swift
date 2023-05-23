@@ -7,29 +7,27 @@
 
 import SwiftUI
 
-
 final class CustomConfigureViewModel: ObservableObject {
 
     let title: String
-
     let minValue: Int
 
-    @Published var currentValue: Int = 0
+    @Published var currentValue: Int = 0 {
+        didSet {
+            print(currentValue)
+        }
+    }
     
-    @Published var maxValueDescription: String = ""
+    @Published private(set) var maxValueDescription: String = ""
     @Published var maxSize: CGSize = CGSize.zero
 
-    private var maxValue: Int?
-    
-    init(title: String, minValue: Int = 0, maxValue: Int? = nil) {
+    init(title: String, minValue: Int = 0) {
         self.title = title
         self.minValue = minValue
-        self.maxValue = maxValue
+        self.currentValue = minValue
     }
 
     func set(maxValue: Int) {
-        self.maxValue = maxValue
         self.maxValueDescription = "\(title): from \(minValue) to \(maxValue)"
     }
-
 }

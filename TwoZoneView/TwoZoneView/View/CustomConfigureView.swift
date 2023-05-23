@@ -21,11 +21,8 @@ struct CustomConfigureView: View {
             .textFieldStyle(.roundedBorder)
             .keyboardType(.numberPad)
             .frame(width: 100)
-
             Spacer()
-
             Text(viewModel.maxValueDescription)
         }
     }
-
 }
